@@ -1,7 +1,8 @@
 import peewee as pw
 from datetime import datetime
 
-db = pw.SqliteDatabase('people.db')
+
+db = pw.SqliteDatabase('telegram.db')
 
 
 class BaseModel(pw.Model):
@@ -11,20 +12,22 @@ class BaseModel(pw.Model):
         database = db
 
 
-class User(BaseModel):
-    chat_id = pw.CharField()
+class User(pw.Model):
+    chat_id = pw.PrimaryKeyField(unique=True)
     is_active = pw.BooleanField(default=True)
     limit_news = pw.SmallIntegerField(default=5)
 
     class Meta:
         db_table = 'users'
+        database = db
 
     def __str__(self):
-        return 'User ' + self.chat_id
+        return f'User {self.chat_id}'
 
 
 class NewsSource(BaseModel):
     name = pw.CharField()
+    slug = pw.CharField()
     link = pw.CharField()
 
     class Meta:
@@ -38,8 +41,9 @@ class NewsSource(BaseModel):
 class News(BaseModel):
     title = pw.CharField()
     created = pw.DateTimeField(default=datetime.now)
-    news_source = pw.ForeignKeyField(NewsSource, on_delete='CASCADE')
+    news_source = pw.ForeignKeyField(NewsSource, on_delete='CASCADE', backref='news')
     link = pw.CharField()
+    is_checked = pw.BooleanField(default=False)
 
     class Meta:
         db_table = 'news'
@@ -50,48 +54,16 @@ class News(BaseModel):
 
 
 class UserNewsSource(BaseModel):
-    user = pw.ForeignKeyField(User, on_delete='CASCADE')
-    news_source = pw.ForeignKeyField(NewsSource, on_delete='CASCADE')
+    user = pw.ForeignKeyField(User, on_delete='CASCADE', backref='user_news_sources')
+    news_source = pw.ForeignKeyField(NewsSource, on_delete='CASCADE', backref='user_news_sources')
+    last_checked = pw.DateTimeField
 
     class Meta:
         db_table = 'user__news_source'
 
+    def save(self, *args, **kwargs):
+        self.last_checked = datetime.now()
+        return super().save(*args, **kwargs)
+
     def __str__(self):
         return f'({str(self.user)} <-> {str(self.news_source)})'
-
-
-class UserViewedNews(BaseModel):
-    user = pw.ForeignKeyField(User, on_delete='CASCADE')
-    news = pw.ForeignKeyField(News, on_delete='CASCADE')
-
-    class Meta:
-        db_table = 'user_viewed_news'
-
-    def __str__(self):
-        return f'({str(self.user)} <-> {str(self.news)})'
-
-
-def get_not_viewed_news(chat_id: str, news_source_name: str) -> list[News]:
-    all_user_news = News.select().join(NewsSource).where(NewsSource.name == news_source_name)
-    viewed_news = News.select().join(UserViewedNews).join(User).where(User.chat_id == chat_id)
-    not_viewed_news = all_user_news - viewed_news
-    return list(not_viewed_news)
-
-
-def get_not_followed_sources(chat_id: str) -> list[NewsSource]:
-    all_news_source = NewsSource.select()
-    user_news_source = NewsSource.select().join(UserNewsSource).join(User).where(User.chat_id == chat_id)
-    not_followed_sources = all_news_source - user_news_source
-    return list(not_followed_sources)
-
-
-def get_followed_sources(chat_id: str) -> list[NewsSource]:
-    user_news_source = NewsSource.select().join(UserNewsSource).join(User).where(User.chat_id == chat_id)
-    return list(user_news_source)
-
-
-def get_news(chat_id: str, news_source_name: str) -> list[News]:
-    user_limit_news = User.get(User.chat_id == chat_id).limit_news
-    news_source = NewsSource.get(NewsSource.name == news_source_name)
-    news = News.select().join(NewsSource).where(NewsSource.id == news_source.id).limit(user_limit_news)
-    return list(news)
