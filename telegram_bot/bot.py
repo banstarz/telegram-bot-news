@@ -203,7 +203,7 @@ def auto_send_news(context: CallbackContext):
         n.save()
 
 if __name__ == '__main__':
-    updater = Updater(token='5824532916:AAGnBcIf9-W3f-zFpAF-uDvJNSPi2DZDfvw', use_context=True)
+    updater = Updater(token='token', use_context=True)
     dispatcher = updater.dispatcher
     updater.job_queue.run_repeating(callback=auto_send_news, interval=15)
 
