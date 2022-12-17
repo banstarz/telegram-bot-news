@@ -50,7 +50,7 @@ class News(BaseModel):
         order_by = ('-created',)
 
     def __str__(self):
-        return 'News: ' + self.title[:10]
+        return 'News: ' + self.title[:50]
 
 
 class UserNewsSource(BaseModel):
@@ -67,3 +67,9 @@ class UserNewsSource(BaseModel):
 
     def __str__(self):
         return f'({str(self.user)} <-> {str(self.news_source)})'
+
+if __name__ == '__main__':
+    a = News.select().join(NewsSource).where(NewsSource.name == 'it-world')
+    for i in a:
+        print(i.link)
+

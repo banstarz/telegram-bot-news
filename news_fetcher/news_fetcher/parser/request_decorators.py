@@ -1,10 +1,7 @@
 import requests
 import time
 import random
-import logging
-
-logger = logging.getLogger(__name__)
-logger.setLevel(logging.WARNING)
+from loguru import logger
 
 
 def retry(max_retries):

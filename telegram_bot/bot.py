@@ -1,4 +1,4 @@
-from models import User, News, NewsSource, UserNewsSource
+from models import User, News, NewsSource, UserNewsSource, db
 from telegram.ext import Updater
 from telegram import Update
 from telegram.ext import CallbackContext
@@ -202,10 +202,20 @@ def auto_send_news(context: CallbackContext):
         n.is_checked = True
         n.save()
 
+
 if __name__ == '__main__':
+    models = [
+        User,
+        NewsSource,
+        News,
+        UserNewsSource
+    ]
+
+    db.create_tables(models=models)
+
     updater = Updater(token='token', use_context=True)
     dispatcher = updater.dispatcher
-    updater.job_queue.run_repeating(callback=auto_send_news, interval=15)
+    updater.job_queue.run_repeating(callback=auto_send_news, interval=10)
 
     dispatcher.add_handler(CommandHandler('start', start))
     dispatcher.add_handler(RegexHandler('^(/from_source(_[\w]+)?)$', from_source))

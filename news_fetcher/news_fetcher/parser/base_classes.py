@@ -1,8 +1,9 @@
 from dataclasses import dataclass
 from abc import ABC, abstractmethod
 
+
 @dataclass
-class News:
+class NewsDataclass:
     title: str
     link: str
 
@@ -17,9 +18,9 @@ class BaseParser(ABC):
     }
 
     @abstractmethod
-    def get_posts_urls(self, num_links: int) -> list[News]:
+    def get_news(self, num_links: int) -> list[NewsDataclass]:
         pass
 
     @abstractmethod
-    def _get_posts_urls_from_page(self) -> list[News]:
+    def _get_news_from_page(self) -> list[NewsDataclass]:
         pass
