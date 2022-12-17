@@ -1,9 +1,11 @@
-from models import User, News, NewsSource, UserNewsSource, db
+from models import User, News, NewsSource, UserNewsSource, UserAction, db
 from telegram.ext import Updater
 from telegram import Update
 from telegram.ext import CallbackContext
-from telegram.ext import CommandHandler, RegexHandler
+from telegram.ext import CommandHandler, RegexHandler, MessageHandler
+from telegram.ext.filters import Filters
 import logging
+import os
 
 logging.basicConfig(
     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s", level=logging.INFO
@@ -36,6 +38,8 @@ class BaseNewsSourcesCommandResponder:
             self.news_source_slug = self.update.message.text.replace(f'{self.command}_', '')
 
     def send_news_sources(self) -> None:
+        log_user_action(self.update)
+
         for news_source in self.news_sources:
             text = f'{self.command}_{news_source.slug}'
             self.context.bot.send_message(chat_id=self.update.effective_chat.id, text=text)
@@ -53,6 +57,8 @@ class FollowSourceResponder(BaseNewsSourcesCommandResponder):
         news_source = NewsSource.get(slug=self.news_source_slug)
 
         _, is_saved = UserNewsSource.get_or_create(user=user, news_source=news_source)
+
+        log_user_action(self.update, bool(is_saved))
 
         if is_saved:
             text = f'Подписка осуществлена успешно'
@@ -76,6 +82,8 @@ class UnfollowSourceResponder(BaseNewsSourcesCommandResponder):
             .get(UserNewsSource.user == user_id, UserNewsSource.news_source == news_source_id)\
             .delete_instance()
 
+        log_user_action(self.update, bool(is_deleted))
+
         if is_deleted:
             text = f'Отписка осуществлена успешно'
             self.context.bot.send_message(chat_id=self.update.effective_chat.id, text=text)
@@ -91,6 +99,8 @@ class UnfollowSourceResponder(BaseNewsSourcesCommandResponder):
 class FromSourceResponder(BaseNewsSourcesCommandResponder):
     def send_source_news(self):
         most_recent_news = self.get_news()
+
+        log_user_action(self.update)
 
         for news in most_recent_news:
             text = f'{news.title}\n{news.link}'
@@ -122,6 +132,7 @@ def start(update: Update, context: CallbackContext):
     """
     User.get_or_create(chat_id=update.effective_chat.id)
     context.bot.send_message(chat_id=update.effective_chat.id, text=text)
+    log_user_action(update)
 
 
 def update_n(update: Update, context: CallbackContext):
@@ -136,10 +147,12 @@ def update_n(update: Update, context: CallbackContext):
     except:
         text = 'Пожалуйста введите число от 1 до 15'
         context.bot.send_message(chat_id=update.effective_chat.id, text=text)
+        log_user_action(update, is_success=False)
     else:
         user.limit_news = limit_news
         user.save()
         context.bot.send_message(chat_id=update.effective_chat.id, text="Успешно обновлено")
+        log_user_action(update)
 
 
 def from_source(update: Update, context: CallbackContext):
@@ -181,6 +194,10 @@ def unfollow_source(update: Update, context: CallbackContext):
         responder.send_news_sources()
 
 
+def usual_message(update: Update, context: CallbackContext):
+    log_user_action(update, is_command=False)
+
+
 def send_news_sources_with_command(
         update: Update,
         context: CallbackContext,
@@ -203,25 +220,38 @@ def auto_send_news(context: CallbackContext):
         n.save()
 
 
+def log_user_action(update: Update, is_command: bool = True, is_success: bool = True):
+    UserAction.create(
+        user=update.effective_chat.id,
+        message=update.message.text,
+        is_success=is_success,
+        is_command=is_command,
+    )
+
+    logger.info(f'New action {UserAction}')
+
+
 if __name__ == '__main__':
     models = [
         User,
         NewsSource,
         News,
-        UserNewsSource
+        UserNewsSource,
+        UserAction,
     ]
 
     db.create_tables(models=models)
 
-    updater = Updater(token='token', use_context=True)
+    updater = Updater(token=os.environ.get('SECRET_KEY'), use_context=True)
     dispatcher = updater.dispatcher
-    updater.job_queue.run_repeating(callback=auto_send_news, interval=10)
+    updater.job_queue.run_repeating(callback=auto_send_news, interval=60)
 
     dispatcher.add_handler(CommandHandler('start', start))
     dispatcher.add_handler(RegexHandler('^(/from_source(_[\w]+)?)$', from_source))
     dispatcher.add_handler(CommandHandler('update_n', update_n))
     dispatcher.add_handler(RegexHandler('^(/follow_source(_[\w]+)?)$', follow_source))
     dispatcher.add_handler(RegexHandler('^(/unfollow_source(_[\w]+)?)$', unfollow_source))
+    dispatcher.add_handler(MessageHandler(Filters.text & ~Filters.command, usual_message))
 
     updater.start_polling()
     updater.idle()

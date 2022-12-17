@@ -1,8 +1,16 @@
 import peewee as pw
 from datetime import datetime
+import os
 
 
-db = pw.SqliteDatabase('telegram.db')
+# db = pw.SqliteDatabase('telegram.db')
+db = pw.PostgresqlDatabase(
+    os.environ.get('DB_NAME'),
+    user=os.environ.get('DB_USER'),
+    password=os.environ.get('DB_PASSWORD'),
+    host=os.environ.get('DB_HOST'),
+    port=os.environ.get('DB_PORT')
+)
 
 
 class BaseModel(pw.Model):
@@ -68,8 +76,18 @@ class UserNewsSource(BaseModel):
     def __str__(self):
         return f'({str(self.user)} <-> {str(self.news_source)})'
 
-if __name__ == '__main__':
-    a = News.select().join(NewsSource).where(NewsSource.name == 'it-world')
-    for i in a:
-        print(i.link)
+
+class UserAction(BaseModel):
+    user = pw.ForeignKeyField(User, on_delete='CASCADE', backref='actions')
+    created = pw.DateTimeField(default=datetime.now)
+    message = pw.TextField()
+    is_command = pw.BooleanField()
+    is_success = pw.BooleanField()
+
+    class Meta:
+        db_table = 'user_action'
+
+    def __str__(self):
+        return f'UserAction(user={self.user}, message={self.message})'
+
 
