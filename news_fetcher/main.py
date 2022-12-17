@@ -1,3 +1,5 @@
+import os
+
 import schedule
 import time
 from loguru import logger
@@ -6,6 +8,7 @@ from news_fetcher.db_writer import DBWriter
 from news_fetcher.parser.cnews_parser import CNewsParser
 from news_fetcher.parser.computerworld_parser import ComputerWorldParser
 from news_fetcher.parser.it_world_parser import ItWorldParser
+from news_fetcher.parser.fake_parser import FakeParser
 
 
 parsers = [
@@ -13,6 +16,9 @@ parsers = [
     ComputerWorldParser(),
     ItWorldParser(),
 ]
+
+if os.environ.get('START_FAKE_NEWS_SOURCE'):
+    parsers.append(FakeParser())
 
 writer = DBWriter()
 writer.insert_news_sources(parsers)
