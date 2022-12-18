@@ -1,5 +1,6 @@
 from loguru import logger
 import random
+import json
 
 from .base_classes import NewsDataclass, BaseParser
 
@@ -16,3 +17,11 @@ class FakeParser(BaseParser):
 
     def _get_news_from_page(self) -> list[NewsDataclass]:
         pass
+
+    @staticmethod
+    def get_prepared_news() -> list[NewsDataclass]:
+        with open('news_fetcher/parser/prepared_news.json') as f:
+            raw_news = json.load(f)
+            news = [NewsDataclass(title=n['title'], link=n['link']) for n in raw_news['news']]
+
+        return news

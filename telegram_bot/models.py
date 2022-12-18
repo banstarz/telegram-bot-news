@@ -22,7 +22,6 @@ class BaseModel(pw.Model):
 
 class User(pw.Model):
     chat_id = pw.PrimaryKeyField(unique=True)
-    is_active = pw.BooleanField(default=True)
     limit_news = pw.SmallIntegerField(default=5)
 
     class Meta:
@@ -85,9 +84,7 @@ class UserAction(BaseModel):
     is_success = pw.BooleanField()
 
     class Meta:
-        db_table = 'user_action'
+        db_table = 'user_actions'
 
     def __str__(self):
         return f'UserAction(user={self.user}, message={self.message})'
-
-

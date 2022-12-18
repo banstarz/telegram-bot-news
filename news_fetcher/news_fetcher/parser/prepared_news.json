@@ -1,0 +1,403 @@
+{
+"news": [
+	{
+		"id" : 2,
+		"title" : "«Ланит» поддержит клиентов компании SAP",
+		"created" : "2022-12-17T15:18:53.960Z",
+		"news_source_id" : 1,
+		"link" : "https:\/\/www.cnews.ru\/news\/line\/2022-12-16_lanit_podderzhit_klientov",
+		"is_checked" : true
+	},
+	{
+		"id" : 3,
+		"title" : "diHouse представляет новые хабы j5create с поддержкой USB4",
+		"created" : "2022-12-17T15:18:53.965Z",
+		"news_source_id" : 1,
+		"link" : "https:\/\/www.cnews.ru\/news\/line\/2022-12-16_dihouse_predstavlyaet_novye_haby",
+		"is_checked" : true
+	},
+	{
+		"id" : 4,
+		"title" : "Топ-менеджеры и эксперты билайна пообщались со стартапами в формате питчей",
+		"created" : "2022-12-17T15:18:53.969Z",
+		"news_source_id" : 1,
+		"link" : "https:\/\/www.cnews.ru\/news\/line\/2022-12-16_top-menedzhery_i_eksperty?erid=LatgBsnak",
+		"is_checked" : true
+	},
+	{
+		"id" : 5,
+		"title" : "Клиенты «Точки» смогут напрямую общаться с госорганами и обмениваться документами с контрагентами",
+		"created" : "2022-12-17T15:18:53.973Z",
+		"news_source_id" : 1,
+		"link" : "https:\/\/www.cnews.ru\/news\/line\/2022-12-16_klienty_tochki_smogut_napryamuyu",
+		"is_checked" : true
+	},
+	{
+		"id" : 6,
+		"title" : "Бывший операционный директор сети Burger Heroes возглавит направление готовой еды в «Яндекс лавке»",
+		"created" : "2022-12-17T15:18:53.976Z",
+		"news_source_id" : 1,
+		"link" : "https:\/\/www.cnews.ru\/news\/line\/2022-12-16_byvshij_operatsionnyj_direktor",
+		"is_checked" : true
+	},
+	{
+		"id" : 7,
+		"title" : "Merlion стала официальным дистрибьютором Lanit Document Management",
+		"created" : "2022-12-17T15:18:53.980Z",
+		"news_source_id" : 1,
+		"link" : "https:\/\/www.cnews.ru\/news\/line\/2022-12-16_merlion_stala_ofitsialnym_distribyutorom",
+		"is_checked" : true
+	},
+	{
+		"id" : 8,
+		"title" : "МТС запустила бесплатные цифровые аудиогиды для автопутешествий по новогоднему Сочи",
+		"created" : "2022-12-17T15:18:53.984Z",
+		"news_source_id" : 1,
+		"link" : "https:\/\/www.cnews.ru\/news\/line\/2022-12-16_mts_zapustila_besplatnye",
+		"is_checked" : true
+	},
+	{
+		"id" : 9,
+		"title" : "ZOOM.CNews: Как работает zip-бомба\n                    ",
+		"created" : "2022-12-17T15:18:53.988Z",
+		"news_source_id" : 1,
+		"link" : "https:\/\/zoom.cnews.ru\/b\/post\/tehnoblog\/77019",
+		"is_checked" : true
+	},
+	{
+		"id" : 10,
+		"title" : "«Ростелеком» запустил тариф с посуточной оплатой опции «Облачные игры Gfn.ru»",
+		"created" : "2022-12-17T15:18:53.992Z",
+		"news_source_id" : 1,
+		"link" : "https:\/\/www.cnews.ru\/news\/line\/2022-12-16_rostelekom_zapustil_tarif",
+		"is_checked" : true
+	},
+	{
+		"id" : 11,
+		"title" : "Tele2 предложила клиентам оформить подписки на иностранные сервисы",
+		"created" : "2022-12-17T15:18:53.995Z",
+		"news_source_id" : 1,
+		"link" : "https:\/\/www.cnews.ru\/news\/line\/2022-12-16_tele2_predlozhila_klientam_oformit",
+		"is_checked" : true
+	},
+	{
+		"id" : 12,
+		"title" : "«БФТ-холдинг» представил новый функционал систем линейки АЦК",
+		"created" : "2022-12-17T15:18:53.999Z",
+		"news_source_id" : 1,
+		"link" : "https:\/\/www.cnews.ru\/news\/line\/2022-12-16_bft-holding_predstavil",
+		"is_checked" : true
+	},
+	{
+		"id" : 13,
+		"title" : "«Росэлектроника» оснастит станками ЧПУ образовательные учреждения Пензенской области",
+		"created" : "2022-12-17T15:18:54.003Z",
+		"news_source_id" : 1,
+		"link" : "https:\/\/www.cnews.ru\/news\/line\/2022-12-16_roselektronika_osnastit",
+		"is_checked" : true
+	},
+	{
+		"id" : 14,
+		"title" : "ВТБ запустил Mir Pay для оплаты чаевых",
+		"created" : "2022-12-17T15:18:54.006Z",
+		"news_source_id" : 1,
+		"link" : "https:\/\/www.cnews.ru\/news\/line\/2022-12-16_vtb_zapustil_mir_pay_dlya_oplaty",
+		"is_checked" : true
+	},
+	{
+		"id" : 15,
+		"title" : "ГК 1520 внедрила российскую цифровую автоматику на станции Калашниково линии Санкт-Петербург – Москва",
+		"created" : "2022-12-17T15:18:54.010Z",
+		"news_source_id" : 1,
+		"link" : "https:\/\/www.cnews.ru\/news\/line\/2022-12-16_gk_1520_vnedrila_rossijskuyu",
+		"is_checked" : true
+	},
+	{
+		"id" : 16,
+		"title" : "В Подмосковье получить разрешение на использование земли под размещение гаража можно онлайн",
+		"created" : "2022-12-17T15:18:54.014Z",
+		"news_source_id" : 1,
+		"link" : "https:\/\/www.cnews.ru\/news\/line\/2022-12-16_v_podmoskove_poluchit_razreshenie",
+		"is_checked" : true
+	},
+	{
+		"id" : 17,
+		"title" : "Stewart Butterfield announces he’s stepping down as Slack’s CEO",
+		"created" : "2022-12-17T15:18:56.616Z",
+		"news_source_id" : 2,
+		"link" : "https:\/\/www.computerworld.com\/\/article\/3681938\/stewart-butterfield-announces-he-s-stepping-down-as-slack-s-ceo.html",
+		"is_checked" : true
+	},
+	{
+		"id" : 18,
+		"title" : "UK set to mandate right to request flexible work from first day on the job",
+		"created" : "2022-12-17T15:18:56.624Z",
+		"news_source_id" : 2,
+		"link" : "https:\/\/www.computerworld.com\/\/article\/3681935\/uk-set-to-mandate-right-to-request-flexible-work-from-first-day-on-the-job.html",
+		"is_checked" : true
+	},
+	{
+		"id" : 19,
+		"title" : "As reshoring brings chipmakers back to the US, Apple looks to jump on board",
+		"created" : "2022-12-17T15:18:56.629Z",
+		"news_source_id" : 2,
+		"link" : "https:\/\/www.computerworld.com\/\/article\/3681991\/as-re-shoring-brings-chipmakers-back-to-the-us-apple-looks-to-jump-on-board.html",
+		"is_checked" : true
+	},
+	{
+		"id" : 20,
+		"title" : "JumpCloud hits AWS marketplace as Apple's enterprise market grows",
+		"created" : "2022-12-17T15:18:56.634Z",
+		"news_source_id" : 2,
+		"link" : "https:\/\/www.computerworld.com\/\/article\/3681831\/jumpcloud-hits-aws-marketplace-as-apples-enterprise-market-grows.html",
+		"is_checked" : true
+	},
+	{
+		"id" : 21,
+		"title" : "How many jobs are available in technology in the US?",
+		"created" : "2022-12-17T15:18:56.638Z",
+		"news_source_id" : 2,
+		"link" : "https:\/\/www.computerworld.com\/\/article\/3542681\/how-many-jobs-are-available-in-technology.html",
+		"is_checked" : true
+	},
+	{
+		"id" : 22,
+		"title" : "Amazon layoffs now expected to mount to 20,000, including top managers",
+		"created" : "2022-12-17T15:18:56.641Z",
+		"news_source_id" : 2,
+		"link" : "https:\/\/www.computerworld.com\/\/article\/3682071\/amazon-layoffs-now-expected-to-mount-to-20000-including-top-managers.html",
+		"is_checked" : true
+	},
+	{
+		"id" : 23,
+		"title" : "Maersk's TradeLens demise likely a death knell for blockchain consortiums",
+		"created" : "2022-12-17T15:18:56.645Z",
+		"news_source_id" : 2,
+		"link" : "https:\/\/www.computerworld.com\/\/article\/3682128\/maersks-tradelens-demise-likely-a-death-knell-for-blockchain-consortiums.html",
+		"is_checked" : true
+	},
+	{
+		"id" : 24,
+		"title" : "Hey, Google: It's time to step up your Pixel upgrade promise",
+		"created" : "2022-12-17T15:18:56.649Z",
+		"news_source_id" : 2,
+		"link" : "https:\/\/www.computerworld.com\/\/article\/3681115\/google-pixel-upgrade.html",
+		"is_checked" : true
+	},
+	{
+		"id" : 25,
+		"title" : "IBM, Maersk scuttle blockchain-based TradeLens supply chain platform",
+		"created" : "2022-12-17T15:18:56.652Z",
+		"news_source_id" : 2,
+		"link" : "https:\/\/www.computerworld.com\/\/article\/3681098\/ibm-maersk-scuttle-blockchain-based-tradelens-supply-chain-platform.html",
+		"is_checked" : true
+	},
+	{
+		"id" : 26,
+		"title" : "AWS brings Verified Access security to the Apple enterprise",
+		"created" : "2022-12-17T15:18:56.656Z",
+		"news_source_id" : 2,
+		"link" : "https:\/\/www.computerworld.com\/\/article\/3681451\/aws-brings-verified-access-security-to-the-apple-enterprise.html",
+		"is_checked" : true
+	},
+	{
+		"id" : 27,
+		"title" : "Alation’s Connected Sheets brings data governance to spreadsheets",
+		"created" : "2022-12-17T15:18:56.663Z",
+		"news_source_id" : 2,
+		"link" : "https:\/\/www.computerworld.com\/https:\/\/www.infoworld.com\/article\/3681336\/alation-s-connected-sheets-brings-data-governance-to-spreadsheets.html",
+		"is_checked" : true
+	},
+	{
+		"id" : 28,
+		"title" : "AWS releases Wickr, its encrypted messaging service for enterprises",
+		"created" : "2022-12-17T15:18:56.671Z",
+		"news_source_id" : 2,
+		"link" : "https:\/\/www.computerworld.com\/\/article\/3681334\/aws-releases-wickr-its-encrypted-messaging-service-for-enterprises.html",
+		"is_checked" : true
+	},
+	{
+		"id" : 29,
+		"title" : "Meta teaches an AI to lie, strategize",
+		"created" : "2022-12-17T15:18:56.679Z",
+		"news_source_id" : 2,
+		"link" : "https:\/\/www.computerworld.com\/\/article\/3681330\/meta-teaches-an-ai-to-lie-strategize.html",
+		"is_checked" : true
+	},
+	{
+		"id" : 30,
+		"title" : "Changes to Google's employee appraisal system stir layoff fears",
+		"created" : "2022-12-17T15:18:56.688Z",
+		"news_source_id" : 2,
+		"link" : "https:\/\/www.computerworld.com\/\/article\/3681109\/changes-to-googles-employee-appraisal-system-stir-layoff-fears.html",
+		"is_checked" : true
+	},
+	{
+		"id" : 31,
+		"title" : "HP to cut up to 6,000 staff in plan to mitigate PC market softness",
+		"created" : "2022-12-17T15:18:56.696Z",
+		"news_source_id" : 2,
+		"link" : "https:\/\/www.computerworld.com\/\/article\/3681068\/hp-to-cut-up-to-6000-staff-in-plan-to-mitigate-pc-market-softness.html",
+		"is_checked" : true
+	},
+	{
+		"id" : 32,
+		"title" : "Demand for IT pros remains high even as layoffs continue",
+		"created" : "2022-12-17T15:18:56.703Z",
+		"news_source_id" : 2,
+		"link" : "https:\/\/www.computerworld.com\/\/article\/3680731\/demand-for-it-pros-remains-high-even-as-layoffs-continue.html",
+		"is_checked" : true
+	},
+	{
+		"id" : 33,
+		"title" : "В российском офисе TikTok остались работать 10 сотрудников",
+		"created" : "2022-12-17T15:18:59.305Z",
+		"news_source_id" : 3,
+		"link" : "https:\/\/www.it-world.ru\/it-news\/market\/189817.html",
+		"is_checked" : true
+	},
+	{
+		"id" : 1,
+		"title" : "Минцифры планирует обязать Apple разрешить установку приложений из альтернативных магазинов приложений",
+		"created" : "2022-12-17T15:18:53.951Z",
+		"news_source_id" : 1,
+		"link" : "https:\/\/www.cnews.ru\/news\/line\/2022-12-16_mintsifry_planiruet_obyazat",
+		"is_checked" : true
+	},
+	{
+		"id" : 34,
+		"title" : "Foxconn отменяет большинство карантинных ограничений в «iPhone City»",
+		"created" : "2022-12-17T15:18:59.309Z",
+		"news_source_id" : 3,
+		"link" : "https:\/\/www.it-world.ru\/it-news\/market\/189811.html",
+		"is_checked" : true
+	},
+	{
+		"id" : 35,
+		"title" : "Российский бизнес просит разрешить использование пиратских программ",
+		"created" : "2022-12-17T15:18:59.312Z",
+		"news_source_id" : 3,
+		"link" : "https:\/\/www.it-world.ru\/it-news\/state\/189810.html",
+		"is_checked" : true
+	},
+	{
+		"id" : 36,
+		"title" : "Apple хочет отказаться от штаб-квартир в Москве",
+		"created" : "2022-12-17T15:18:59.316Z",
+		"news_source_id" : 3,
+		"link" : "https:\/\/www.it-world.ru\/it-news\/market\/189806.html",
+		"is_checked" : true
+	},
+	{
+		"id" : 37,
+		"title" : "YADRO поставит базовые станции \"Ростелекому\"; РФ и Турция могут создать электронную площадку газового хаба; хартия этики для классифайдов",
+		"created" : "2022-12-17T15:18:59.320Z",
+		"news_source_id" : 3,
+		"link" : "https:\/\/www.it-world.ru\/it-news\/market\/189804.html",
+		"is_checked" : true
+	},
+	{
+		"id" : 38,
+		"title" : "Ericsson продаст свой бизнес по поддержке клиентов в РФ",
+		"created" : "2022-12-17T15:18:59.323Z",
+		"news_source_id" : 3,
+		"link" : "https:\/\/www.it-world.ru\/it-news\/market\/189799.html",
+		"is_checked" : true
+	},
+	{
+		"id" : 39,
+		"title" : "YADRO займется поставкой базовых станций 2G и 4G \"Ростелекому\"",
+		"created" : "2022-12-17T15:18:59.327Z",
+		"news_source_id" : 3,
+		"link" : "https:\/\/www.it-world.ru\/it-news\/market\/189782.html",
+		"is_checked" : true
+	},
+	{
+		"id" : 40,
+		"title" : "Первый в мире арендный самокат из магниевого сплава представил «Яндекс»",
+		"created" : "2022-12-17T15:18:59.330Z",
+		"news_source_id" : 3,
+		"link" : "https:\/\/www.it-world.ru\/it-news\/products\/189780.html",
+		"is_checked" : true
+	},
+	{
+		"id" : 41,
+		"title" : "Cognitive Pilot разрабатывает робота для анализа почвы",
+		"created" : "2022-12-17T15:18:59.334Z",
+		"news_source_id" : 3,
+		"link" : "https:\/\/www.it-world.ru\/it-news\/tech\/189773.html",
+		"is_checked" : true
+	},
+	{
+		"id" : 42,
+		"title" : "Минцифры не поддерживает запрет на удалёнку в IТ-компаниях для сотрудников за границей, Whoosh привлек на IPO 2,1 млрд рублей, США разрешили банкам Казахстана проводить выборочные операции по картам «Мир»",
+		"created" : "2022-12-17T15:18:59.338Z",
+		"news_source_id" : 3,
+		"link" : "https:\/\/www.it-world.ru\/it-news\/market\/189771.html",
+		"is_checked" : true
+	},
+	{
+		"id" : 43,
+		"title" : "Полупроводниковая звезда смерти: Китай наносит ответный удар демпингом",
+		"created" : "2022-12-17T15:18:59.344Z",
+		"news_source_id" : 3,
+		"link" : "https:\/\/www.it-world.ru\/it-news\/tech\/189767.html",
+		"is_checked" : true
+	},
+	{
+		"id" : 44,
+		"title" : "США приоткрыли Казахстану дверь в «МИР»",
+		"created" : "2022-12-17T15:18:59.348Z",
+		"news_source_id" : 3,
+		"link" : "https:\/\/www.it-world.ru\/it-news\/market\/189764.html",
+		"is_checked" : true
+	},
+	{
+		"id" : 45,
+		"title" : "Минцифры предложило законопроект об оборотных штрафах за утечку персональных данных - до 3% от оборота организации",
+		"created" : "2022-12-17T15:18:59.352Z",
+		"news_source_id" : 3,
+		"link" : "https:\/\/www.it-world.ru\/it-news\/state\/189763.html",
+		"is_checked" : true
+	},
+	{
+		"id" : 46,
+		"title" : "Единственное российское IPO в этом году: кикшеринг Whoosh привлек 2,1 млрд рублей",
+		"created" : "2022-12-17T15:18:59.355Z",
+		"news_source_id" : 3,
+		"link" : "https:\/\/www.it-world.ru\/it-news\/market\/189756.html",
+		"is_checked" : true
+	},
+	{
+		"id" : 47,
+		"title" : "За год российские блогеры потеряли большую часть дохода",
+		"created" : "2022-12-17T15:18:59.359Z",
+		"news_source_id" : 3,
+		"link" : "https:\/\/www.it-world.ru\/it-news\/market\/189755.html",
+		"is_checked" : true
+	},
+	{
+		"id" : 48,
+		"title" : "Экс-главу FTX поймали на Багамах; Китай запретил поставки процессоров Loongson в РФ; принят ГОСТ, ограничивающий скорость электросамокатов до 25 км\/ч",
+		"created" : "2022-12-17T15:18:59.362Z",
+		"news_source_id" : 3,
+		"link" : "https:\/\/www.it-world.ru\/it-news\/market\/189747.html",
+		"is_checked" : true
+	},
+	{
+		"id" : 222,
+		"title" : "Fake New number 2058339",
+		"created" : "2022-12-18T03:30:41.283Z",
+		"news_source_id" : 34,
+		"link" : "fake_source::fake_link::2058339",
+		"is_checked" : false
+	},
+	{
+		"id" : 180,
+		"title" : "ИИ-приложение прочитало 48 млн научных статей. И начало нести чушь",
+		"created" : "2022-12-18T03:04:28.136Z",
+		"news_source_id" : 3,
+		"link" : "https:\/\/www.it-world.ru\/it-news\/tech\/189823.html",
+		"is_checked" : true
+	}
+]}
