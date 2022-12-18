@@ -2,6 +2,12 @@
 
 Тестовое задание Telegram bot
 
+* СУБД - Postgresql
+* ORM - Peewee
+* [python-telegram-bot library](https://github.com/python-telegram-bot/python-telegram-bot)
+* docker-compose
+
+
 ## Инструкция запуска:
 
 * Переименовать файл .env.example в .env.dev
